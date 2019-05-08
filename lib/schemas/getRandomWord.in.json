@@ -1,0 +1,54 @@
+{
+    "type": "object",
+    "properties": {
+        "hasDictionaryDef": {
+            "required": false,
+            "type": "string",
+            "default": "true"
+        },
+        "includePartOfSpeech": {
+            "required": false,
+            "type": "string"
+        },
+        "excludePartOfSpeech": {
+            "required": false,
+            "type": "string"
+        },
+        "minCorpusCount": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "maxCorpusCount": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": -1
+        },
+        "minDictionaryCount": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        },
+        "maxDictionaryCount": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": -1
+        },
+        "minLength": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 5
+        },
+        "maxLength": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": -1
+        }
+    }
+}

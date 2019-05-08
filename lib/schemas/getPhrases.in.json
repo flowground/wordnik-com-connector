@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "word": {
+            "required": true,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 5
+        },
+        "wlmi": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "useCanonical": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        }
+    }
+}

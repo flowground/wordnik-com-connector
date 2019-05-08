@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "permalink": {
+            "required": true,
+            "type": "string"
+        },
+        "sortBy": {
+            "required": false,
+            "type": "string",
+            "default": "createDate"
+        },
+        "sortOrder": {
+            "required": false,
+            "type": "string",
+            "default": "desc"
+        },
+        "skip": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 100
+        },
+        "auth_token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

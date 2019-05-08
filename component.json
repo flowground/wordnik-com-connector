@@ -1,0 +1,488 @@
+{
+    "title": "Wordnik",
+    "description": "Wordnik is the world's biggest online English dictionary, by number of words\n",
+    "docsUrl": "http://developer.wordnik.com/",
+    "url": "https://api.apis.guru/v2/specs/wordnik.com/4.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.wordnik.com/v4",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "_apikey (api_key)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getApiTokenStatus": {
+            "main": "./lib/actions/getApiTokenStatus.js",
+            "title": "Returns usage statistics for the API account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getApiTokenStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "authenticate": {
+            "main": "./lib/actions/authenticate.js",
+            "title": "Authenticates a User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/authenticate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "authenticatePost": {
+            "main": "./lib/actions/authenticatePost.js",
+            "title": "Authenticates a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/authenticatePost.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getLoggedInUser": {
+            "main": "./lib/actions/getLoggedInUser.js",
+            "title": "Returns the logged-in User",
+            "description": "Requires a valid auth_token to be set.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getLoggedInUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getWordListsForLoggedInUser": {
+            "main": "./lib/actions/getWordListsForLoggedInUser.js",
+            "title": "Fetches WordList objects for the logged-in user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getWordListsForLoggedInUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getWord": {
+            "main": "./lib/actions/getWord.js",
+            "title": "Given a word as a string, returns the WordObject that represents it",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getWord.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAudio": {
+            "main": "./lib/actions/getAudio.js",
+            "title": "Fetches audio metadata for a word.",
+            "description": "The metadata includes a time-expiring fileUrl which allows reading the audio file directly from the API.  Currently only audio pronunciations from the American Heritage Dictionary in mp3 format are supported.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAudio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDefinitions": {
+            "main": "./lib/actions/getDefinitions.js",
+            "title": "Return definitions for a word",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDefinitions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEtymologies": {
+            "main": "./lib/actions/getEtymologies.js",
+            "title": "Fetches etymology data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEtymologies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getExamples": {
+            "main": "./lib/actions/getExamples.js",
+            "title": "Returns examples for a word",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getExamples.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getWordFrequency": {
+            "main": "./lib/actions/getWordFrequency.js",
+            "title": "Returns word usage over time",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getWordFrequency.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getHyphenation": {
+            "main": "./lib/actions/getHyphenation.js",
+            "title": "Returns syllable information for a word",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getHyphenation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPhrases": {
+            "main": "./lib/actions/getPhrases.js",
+            "title": "Fetches bi-gram phrases for a word",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPhrases.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTextPronunciations": {
+            "main": "./lib/actions/getTextPronunciations.js",
+            "title": "Returns text pronunciations for a given word",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTextPronunciations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRelatedWords": {
+            "main": "./lib/actions/getRelatedWords.js",
+            "title": "Given a word as a string, returns relationships from the Word Graph",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRelatedWords.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTopExample": {
+            "main": "./lib/actions/getTopExample.js",
+            "title": "Returns a top example for a word",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTopExample.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteWordList": {
+            "main": "./lib/actions/deleteWordList.js",
+            "title": "Deletes an existing WordList",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteWordList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getWordListByPermalink": {
+            "main": "./lib/actions/getWordListByPermalink.js",
+            "title": "Fetches a WordList by ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getWordListByPermalink.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateWordList": {
+            "main": "./lib/actions/updateWordList.js",
+            "title": "Updates an existing WordList",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateWordList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteWordsFromWordList": {
+            "main": "./lib/actions/deleteWordsFromWordList.js",
+            "title": "Removes words from a WordList",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteWordsFromWordList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getWordListWords": {
+            "main": "./lib/actions/getWordListWords.js",
+            "title": "Fetches words in a WordList",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getWordListWords.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addWordsToWordList": {
+            "main": "./lib/actions/addWordsToWordList.js",
+            "title": "Adds words to a WordList",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addWordsToWordList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createWordList": {
+            "main": "./lib/actions/createWordList.js",
+            "title": "Creates a WordList.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createWordList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRandomWord": {
+            "main": "./lib/actions/getRandomWord.js",
+            "title": "Returns a single random WordObject",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRandomWord.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRandomWords": {
+            "main": "./lib/actions/getRandomWords.js",
+            "title": "Returns an array of random WordObjects",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRandomWords.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "reverseDictionary": {
+            "main": "./lib/actions/reverseDictionary.js",
+            "title": "Reverse dictionary search",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/reverseDictionary.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "searchWords": {
+            "main": "./lib/actions/searchWords.js",
+            "title": "Searches words",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchWords.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getWordOfTheDay": {
+            "main": "./lib/actions/getWordOfTheDay.js",
+            "title": "Returns a specific WordOfTheDay",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getWordOfTheDay.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

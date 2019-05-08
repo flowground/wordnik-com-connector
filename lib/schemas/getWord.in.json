@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "word": {
+            "required": true,
+            "type": "string"
+        },
+        "useCanonical": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        },
+        "includeSuggestions": {
+            "required": false,
+            "type": "string",
+            "default": "true"
+        }
+    }
+}

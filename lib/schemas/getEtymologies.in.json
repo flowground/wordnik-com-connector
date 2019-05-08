@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "word": {
+            "required": true,
+            "type": "string"
+        },
+        "useCanonical": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

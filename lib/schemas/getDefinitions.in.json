@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "word": {
+            "required": true,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 200
+        },
+        "partOfSpeech": {
+            "required": false,
+            "type": "string"
+        },
+        "includeRelated": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        },
+        "sourceDictionaries": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "useCanonical": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        },
+        "includeTags": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        }
+    }
+}

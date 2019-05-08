@@ -1,0 +1,81 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": true,
+            "type": "string"
+        },
+        "findSenseForWord": {
+            "required": false,
+            "type": "string"
+        },
+        "includeSourceDictionaries": {
+            "required": false,
+            "type": "string"
+        },
+        "excludeSourceDictionaries": {
+            "required": false,
+            "type": "string"
+        },
+        "includePartOfSpeech": {
+            "required": false,
+            "type": "string"
+        },
+        "excludePartOfSpeech": {
+            "required": false,
+            "type": "string"
+        },
+        "minCorpusCount": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 5
+        },
+        "maxCorpusCount": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": -1
+        },
+        "minLength": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        },
+        "maxLength": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": -1
+        },
+        "expandTerms": {
+            "required": false,
+            "type": "string"
+        },
+        "includeTags": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        },
+        "sortBy": {
+            "required": false,
+            "type": "string"
+        },
+        "sortOrder": {
+            "required": false,
+            "type": "string"
+        },
+        "skip": {
+            "required": false,
+            "type": "string",
+            "default": "0"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 10
+        }
+    }
+}

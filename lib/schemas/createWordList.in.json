@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "properties": {
+        "auth_token": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "createdAt": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "lastActivityAt": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "numberWordsInList": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "permalink": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "userId": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "string"
+        }
+    }
+}

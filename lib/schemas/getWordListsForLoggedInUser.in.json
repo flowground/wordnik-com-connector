@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "auth_token": {
+            "required": true,
+            "type": "string"
+        },
+        "skip": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "permalink": {
+            "required": true,
+            "type": "string"
+        },
+        "auth_token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

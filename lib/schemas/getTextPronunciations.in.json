@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "word": {
+            "required": true,
+            "type": "string"
+        },
+        "useCanonical": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        },
+        "sourceDictionary": {
+            "required": false,
+            "type": "string"
+        },
+        "typeFormat": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+        }
+    }
+}

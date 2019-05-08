@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "word": {
+            "required": true,
+            "type": "string"
+        },
+        "useCanonical": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        },
+        "startYear": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1800
+        },
+        "endYear": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 2012
+        }
+    }
+}

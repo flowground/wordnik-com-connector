@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "permalink": {
+            "required": true,
+            "type": "string"
+        },
+        "auth_token": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "items": {
+                "properties": {
+                    "word": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        }
+    }
+}
